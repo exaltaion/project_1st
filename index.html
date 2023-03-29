@@ -1,22 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>메인페이지(가제목 : 업무분장 및 일정관리 사이트)</title>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <title>메인페이지(가제목 : 업무분장 및 일정관리 사이트)</title>
+   <style>
+      .logo {
+         width: 100%;
+         float: left;
+         margin : 0;
+      }
+
+      .navbar {
+         background-color: rgb(227, 253, 253);
+         text-align: right;
+         margin : 0;
+      }
+
+      .about {
+         background-color: rgb(203, 241, 245);
+         text-align: left;
+         margin : 0;
+
+      }
+
+      .footer1 {
+         background-color: rgb(166, 227, 233);
+         text-align: left;
+      }
+      .footer2 {
+         background-color: rgb(166, 227, 233);
+         text-align: left;
+   
+      }
+      .footer3 {
+         background-color: rgb(166, 227, 233);   
+      text-align: right;
+      }
+
+      .copyright {
+         background-color: rgb(113, 201, 206);
+         text-align: center;
+      }
+
+      ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+h4 {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+   </style>
 </head>
 
 <body>
-  <a href="/project_first/login.html">
-    <button>로그인</button>
-  </a>
-  <a href="/project_first/userRegister.html">
-    <button>사용자등록</button>
-    <a href="/project_first/workSpaceList.html">
-      <button>업무리스트</button></a>
+   <!--navbar section start -->
+   <div class="logo"><a href="index.html"><img src="images/logo1.png"></a></div>
+   <div class="navbar">
+      <ul>
+         <a href="index.html">홈</a>
+         <a href="login.html">로그인</a>
+         <a href="userRegister.html">사용자등록</a>
+         <a href="workSpaceList.html">업무리스트</a>
+         <a href="workSpace.html">세부 업무</a>
+         <a href="organizationChart.html">조직도</a>
+      </ul>
+   </div>
+   <!-- navbar section end -->
+   <!-- about section start -->
 
+   <div class="about">
+      <div><img src="images/img-8.png"></div>
+
+      <div>
+         <h1>업무분장 및 일정관리 사이트</h1>
+         <p>사용자 등록을 마치지 않은 직원은 사용자 등록 후 이용해주시기 바랍니다.</p>
+         <div><a href="login.html">로그인 </a></div>
+         <div><a href="userRegister.html">사용자등록 </a></div>
+      </div>
+   </div>
+
+   <!-- about section end -->
+   <!-- footer section start -->
+
+   <div>
+      <div class="footer1">
+      <h4>주소</h4>
+      <p>충남 천안시 동남구 대흥로 215, 7층</p>
+
+      <div class="footer2">
+      <h4>빠른 페이지 이동</h4>
+      <ul>
+         <li><a href="index.html">홈</a></li>
+         <li><a href="serviceList.html">업무리스트</a></li>
+         <li><a href="services.html">세부 업무리스트</a></li>
+         <li><a href="services.html">업무입력</a></li>
+         <li><a href="organizationChart.html">조직도</a></li>
+      </ul>
+   </div>
+</div>
+<div class="footer3">
+      <h4>불편사항 접수</h4>
+      <ul>
+         <li><a href="#"><img src=""></a></li>
+         <li><a href="#"><img src=""></a></li>
+         <li><a href="#"><img src=""></a></li>
+      </ul>
+      <input type="text" class="mail_bt" placeholder="이메일 주소" name="Enter Your Email">
+      <input type="text" class="mail_bt" placeholder="전화번호" name="Phone">
+      <button><a href="#">전송</a></button>
+   </div>
+</div>
+   <!-- footer section end -->
+   <!-- copyright section start -->
+   <div>
+      <div class="copyright">Copyright 2023 All Right Reserved By <a href="https://html.design">CHD corp.</a></div>
+   </div>
 </body>
 
 </html>
