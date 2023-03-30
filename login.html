@@ -1,14 +1,203 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>로그인페이지(가제목 : 업무분장 및 일정관리 사이트)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <title>로그인 페이지(가제목 : 회사내 업무관리 사이트)</title>
+  <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+
+      li {
+         /*아래와 같이 list-style을 none으로 작성하면 앞에 점을 제거할 수 있음*/
+         list-style: none;
+         /*이렇게 작성하면 옆으로 붙는 형식이 됨*/
+         /* float: left; */
+         margin: 0px;
+      }
+
+      a {
+         /*버튼에 밑줄이 지워짐*/
+         text-decoration: none;
+         text-align: center;
+      }
+
+      .header {
+         background-color: rgb(227, 253, 253);
+         width: 100%;
+         height:100px;
+      }
+
+      .main {
+         width: 100%;
+      }
+
+      .logo {
+         float: left;
+         margin: 0;
+      }
+
+      .navbar {
+         background-color: rgb(227, 253, 253);
+         text-align: right;
+         float: right;
+         margin: 0;
+      }
+
+      .about {
+         background-color: rgb(203, 241, 245);
+         text-align: left;
+         margin: 0;
+
+      }
+
+      .footer1 {
+         width: 33%;
+         height:200px;
+         background-color: rgb(166, 227, 233);
+         display:inline-flex;
+         flex-direction: row;
+	      flex-wrap: wrap;
+         text-align: left;
+         margin: 0;
+         padding-top: 15px;
+
+      }
+
+      .footer2 {
+         width: 33%;
+         height:200px;
+         background-color: rgb(166, 227, 233);
+         display:inline-flex;
+         flex-direction: row;
+	      flex-wrap: wrap;
+         text-align: left;
+         margin: 0;
+         padding-top: 15px;
+
+      }
+
+      .footer3 {
+         width: 34%;
+         height:200px;
+         background-color: rgb(166, 227, 233);
+         display:inline-flex;
+         flex-direction: row;
+	      flex-wrap: wrap;
+         text-align:left;
+         margin: 0;
+         padding-top: 15px;
+
+      }
+
+      .copyright {
+         background-color: rgb(113, 201, 206);
+         text-align: center;
+      }
+
+      ul {
+         display: block;
+         list-style-type: disc;
+         margin-block-start: 0;
+         margin-block-end: 0;
+         margin-inline-start: 0px;
+         margin-inline-end: 0px;
+         padding-inline-start: 0px;
+      }
+
+      h1 {
+         display: block;
+         font-size: 0;
+         margin-block-start: 0.67em;
+         margin-block-end: 0.67em;
+         margin-inline-start: 0px;
+         margin-inline-end: 0px;
+         font-weight: bold;
+      }
+
+      h4 {
+         display: block;
+         margin-block-start: 0;
+         margin-block-end: 0;
+         margin-inline-start: 0px;
+         margin-inline-end: 0px;
+         font-weight: bold;
+      }
+  </style>
 </head>
+
 <body>
-  <a href="index.html">
-  <button>로그인</button>
-  </a>
+   <!--header section start -->
+   <header class="header">
+      <div class="logo"><a href="index.html"><img src="images/logo1.png"></a>
+      </div>
+      <div class="navbar">
+         <ul>
+            <button><a href="index.html">홈</a></button>
+            <button><a href="login.html">로그인</a></button>
+            <button><a href="userRegister.html">사용자등록</a></button>
+            <button><a href="workSpaceList.html">업무리스트</a></button>
+            <button><a href="workSpace.html">세부 업무</a></button>
+            <button><a href="organizationChart.html">조직도</a></button>
+         </ul>
+      </div>
+   </header>
+   <!-- header section end -->
+  <!-- contact section start -->
+<main>
+  <div class="about">
+    <div>
+      <h1>로그인 페이지</h1>
+      <p>직원 업무분장 로그인 페이지 입니다.</p>
+      <form action="/action_page.php">
+        <div class="form-group">
+          <input type="text" class="email-bt" placeholder="사번" name="Name">
+        </div>
+        <div class="form-group">
+          <input type="password" class="email-bt" placeholder="비밀번호" name="Name">
+        </div>
+      </form>
+    </div>
+    <div><button><a href="index.html">로그인</a></button></div>
+  </div>
+</main>
+  <!-- contact section end -->
+   <!-- footer section start -->
+   <footer>
+    <div class="footer1"><div>
+       <h4>주소</h4><br>
+       <p>충남 천안시 동남구 대흥로 215, 7층</p>
+    </div></div><div class="footer2"><div>
+       <h4>빠른 페이지 이동</h4>
+       <ul>
+          <li><a href="index.html">홈</a></li>
+          <li><a href="workSpaceList.html">업무리스트</a></li>
+          <li><a href="workSpace.html">세부 업무리스트</a></li>
+          <li><a href="index.html">업무입력</a></li>
+          <li><a href="organizationChart.html">조직도</a></li>
+       </ul>
+    </div></div><div class="footer3"><form action="complain">
+       <div><h4>불편사항 접수</h4><br>
+          <textarea type="text" class="mail_bt" placeholder="불편사항" rows="5" cols="22" name="complain"></textarea><br>
+          <input type="text" class="mail_bt" placeholder="이메일 주소" name="Enter Your Email"><br>
+       <button><a href="#">전송</a></button></form>
+    </div></div>
+    </div>
+ </footer>
+ <!-- footer section end -->
+  <!-- copyright section start -->
+  <div>
+    <div class="copyright">Copyright 2023 All Right Reserved By <a href="index.html">CHD corp.</a></div>
+  </div>
+  <!-- copyright section end -->
+
 </body>
+
 </html>
