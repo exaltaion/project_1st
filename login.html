@@ -15,6 +15,37 @@
          box-sizing: border-box;
       }
 
+      .login {
+      width: 300px;
+      border: 1px solid black;
+      margin:0 auto;
+      padding:50px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .login label{
+      margin-top: 20px;
+    }
+
+    .login button{
+      margin-top: 20px;
+    }
+
+    .login input {
+      font-size: 1.25rem;
+      padding-left: 10px;
+    }
+    
+    .login input:focus{
+      /* later..google */
+      border: 1px solid red;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
       li {
          /*아래와 같이 list-style을 none으로 작성하면 앞에 점을 제거할 수 있음*/
          list-style: none;
@@ -36,6 +67,7 @@
       }
 
       .main {
+         background-color: rgb(203, 241, 245);
          width: 100%;
       }
 
@@ -150,25 +182,20 @@
       </div>
    </header>
    <!-- header section end -->
-  <!-- contact section start -->
-<main>
-  <div class="about">
-    <div>
-      <h1>로그인 페이지</h1>
-      <p>직원 업무분장 로그인 페이지 입니다.</p>
-      <form action="/action_page.php">
-        <div class="form-group">
-          <input type="text" class="email-bt" placeholder="사번" name="Name">
-        </div>
-        <div class="form-group">
-          <input type="password" class="email-bt" placeholder="비밀번호" name="Name">
-        </div>
-      </form>
-    </div>
-    <div><button><a href="index.html">로그인</a></button></div>
-  </div>
+  <!-- main section start -->
+<main class="main">
+   <div class="login">
+      <h2>사용자 로그인</h2>
+      <h3>아이디</h3>
+      <input type="text" placeholder="아이디" id="inputId">
+      <h3>비밀번호</h3>
+      <input type="password" placeholder="비밀번호" id="inputPw">
+      
+      <label>아이디 저장<input type="checkbox" id="checkIdSave"></label>
+      
+      <button id="btnLogIn">로그인</button>
 </main>
-  <!-- contact section end -->
+  <!-- main section end -->
    <!-- footer section start -->
    <footer>
     <div class="footer1"><div>
@@ -198,6 +225,35 @@
   </div>
   <!-- copyright section end -->
 
+  <script>
+   window.onload = ()=>{
+     const btn = document.getElementById('btnLogIn');
+     const inputId = document.getElementById('inputId');
+     const inputPw = document.getElementById('inputPw');
+     const inputChk = document.getElementById('checkIdSave');
+
+     let loginId_LocalStorage = localStorage.getItem('loginId');
+     console.log(loginId_LocalStorage);
+     if(loginId_LocalStorage !=''&&loginId_LocalStorage !=null){
+       inputId.value = loginId_LocalStorage;
+       inputChk.checked = true;
+     }
+
+     btn.addEventListener('click', function(){
+
+    if(inputChk.checked==true){
+     console.log(inputChk.checked);
+     localStorage.setItem('loginId', inputId.value);
+    } else {
+     console.log(inputChk.checked);
+     localStorage.setItem('loginId', '');
+    }
+
+       inputId.value = '';
+       inputPw.value = '';
+     });
+   }
+ </script>
 </body>
 
 </html>
