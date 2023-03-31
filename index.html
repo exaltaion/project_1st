@@ -8,11 +8,77 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
    <title>메인페이지(가제목 : 회사내 업무관리 사이트)</title>
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
    <style>
-      * {
+       * {
          margin: 0;
          padding: 0;
          box-sizing: border-box;
+      }
+
+      /*아코디언 부분*/
+      h3 {
+         text-align: center;
+      }
+
+      .container {
+         width: 900px;
+         margin: 0 auto;
+      }
+
+      .item-title {
+         font-weight: bold;
+         color: darkblue;
+         cursor: pointer;
+      }
+
+      .item-content {
+         height: 0px;
+         overflow: hidden;
+         transition-property: all;
+         transition-duration: 1s;
+      }
+
+      .active {
+         display: block;
+         height: 150px;
+      }
+
+      /*아코디언 부분 종료*/
+
+
+
+      .login {
+         width: 300px;
+         border: 1px solid black;
+         margin: 0 auto;
+         padding: 50px;
+         display: flex;
+         flex-direction: column;
+      }
+
+      .login label {
+         margin-top: 20px;
+      }
+
+      .login button {
+         margin-top: 20px;
+      }
+
+      .login input {
+         font-size: 1.25rem;
+         padding-left: 10px;
+      }
+
+      .login input:focus {
+         /* later..google */
+         border: 1px solid red;
+      }
+
+      h2 {
+         text-align: center;
       }
 
       li {
@@ -32,10 +98,11 @@
       .header {
          background-color: rgb(227, 253, 253);
          width: 100%;
-         height:100px;
+         height: 100px;
       }
 
       .main {
+         background-color: rgb(203, 241, 245);
          width: 100%;
       }
 
@@ -60,11 +127,11 @@
 
       .footer1 {
          width: 33%;
-         height:200px;
+         height: 300px;
          background-color: rgb(166, 227, 233);
-         display:inline-flex;
+         display: inline-flex;
          flex-direction: row;
-	      flex-wrap: wrap;
+         flex-wrap: wrap;
          text-align: left;
          margin: 0;
          padding-top: 15px;
@@ -73,11 +140,11 @@
 
       .footer2 {
          width: 33%;
-         height:200px;
+         height: 300px;
          background-color: rgb(166, 227, 233);
-         display:inline-flex;
+         display: inline-flex;
          flex-direction: row;
-	      flex-wrap: wrap;
+         flex-wrap: wrap;
          text-align: left;
          margin: 0;
          padding-top: 15px;
@@ -86,12 +153,12 @@
 
       .footer3 {
          width: 34%;
-         height:200px;
+         height: 300px;
          background-color: rgb(166, 227, 233);
-         display:inline-flex;
+         display: inline-flex;
          flex-direction: row;
-	      flex-wrap: wrap;
-         text-align:left;
+         flex-wrap: wrap;
+         text-align: left;
          margin: 0;
          padding-top: 15px;
 
@@ -144,7 +211,7 @@
             <button><a href="login.html">로그인</a></button>
             <button><a href="userRegister.html">사용자등록</a></button>
             <button><a href="workSpaceList.html">업무리스트</a></button>
-            <button><a href="workspace.html">세부 업무</a></button>
+            <button><a href="workSpace.html">세부 업무</a></button>
             <button><a href="organizationChart.html">조직도</a></button>
          </ul>
       </div>
@@ -172,15 +239,15 @@
          <ul>
             <li><a href="index.html">홈</a></li>
             <li><a href="workSpaceList.html">업무리스트</a></li>
-            <li><a href="workSpace.html">세부 업무리스트</a></li>
-            <li><a href="services.html">업무입력</a></li>
+            <li><a href="workSpaceAddListEmployee.html">세부 업무리스트</a></li>
+            <li><a href="workSpaceAddListManager.html">업무입력</a></li>
             <li><a href="organizationChart.html">조직도</a></li>
          </ul>
       </div></div><div class="footer3"><form action="complain">
          <div><h4>불편사항 접수</h4><br>
             <textarea type="text" class="mail_bt" placeholder="불편사항" rows="5" cols="22" name="complain"></textarea><br>
-            <input type="email" class="mail_bt" placeholder="이메일 주소" name="Enter Your Email"><br>
-         <button>전송</button></form>
+            <input type="text" class="mail_bt" placeholder="이메일 주소" name="Enter Your Email"><br>
+         <button><a href="#">전송</a></button></form>
       </div></div>
       </div>
    </footer>
@@ -188,7 +255,7 @@
    <!-- copyright section start -->
    <div>
       <div class="copyright">Copyright 2023 All Right Reserved By <a
-            href="index.html">CHD corp.</a></div>
+            href="/project_1st_test_todoList_destroy/index.html">CHD corp.</a></div>
    </div>
 </body>
 
