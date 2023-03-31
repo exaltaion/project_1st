@@ -12,224 +12,234 @@
   integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <style>
       * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-     }
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
 
-     /*아코디언 부분*/
-     h3 {
-        text-align: center;
-     }
+      /*아코디언 부분*/
+      h3 {
+         text-align: center;
+      }
 
-     .container {
-        width: 900px;
-        margin: 0 auto;
-     }
+      .container {
+         width: 1000px;
+         margin: 0 auto;
+      }
 
-     .item-title {
-        font-weight: bold;
-        color: darkblue;
-        cursor: pointer;
-     }
+      .item-title {
+         font-weight: bold;
+         color: darkblue;
+         cursor: pointer;
+      }
 
-     .item-content {
-        height: 0px;
-        overflow: hidden;
-        transition-property: all;
-        transition-duration: 1s;
-     }
+      .item-content {
+         height: 0px;
+         overflow: hidden;
+         transition-property: all;
+         transition-duration: 1s;
+      }
 
-     .active {
-        display: block;
-        height: 150px;
-     }
-     /*아코디언 부분 종료*/
+      .active {
+         display: block;
+         height: 350px;
+      }
 
-     .login {
-        width: 400px;
-        border: 1px solid black;
-        margin: 0 auto;
-        padding: 50px;
-        display: flex;
-        flex-direction: column;
-     }
+      /*아코디언 부분 종료*/
 
-     .login label {
-        margin-top: 20px;
-     }
 
-     .login button {
-        margin-top: 20px;
-     }
 
-     .login input {
-        font-size: 1.25rem;
-        padding-left: 10px;
-     }
+      .login {
+         width: 300px;
+         border: 1px solid black;
+         margin: 0 auto;
+         padding: 15px;
+         display: flex;
+         flex-direction: column;
+      }
 
-     .login input:focus {
-        /* later..google */
-        border: 1px solid red;
-     }
+      .login label {
+         margin-top: 20px;
+      }
 
-     h2 {
-        text-align: center;
-     }
+      .login button {
+         margin-top: 20px;
+      }
 
-     li {
-        /*none 작성시 점 제거*/
-        list-style: none;
-        /*옆으로 붙는 형식이 됨*/
-        /* float: left; */
-        margin: 0px;
-     }
+      .login input {
+         font-size: 1.25rem;
+         padding-left: 10px;
+      }
 
-     a {
-        /*버튼에 밑줄이 지워짐*/
-        text-decoration: none;
-        text-align: center;
-     }
+      .login input:focus {
+         /* later..google */
+         border: 1px solid red;
+      }
 
-     .header {
-        background-color: rgb(227, 253, 253);
-        width: 100%;
-        height: 100px;
-     }
+      h2 {
+         text-align: center;
+      }
 
-     .main {
-        background-color: rgb(203, 241, 245);
-        width: 100%;
-     }
+      li {
+         /*아래와 같이 list-style을 none으로 작성하면 앞에 점을 제거할 수 있음*/
+         list-style: none;
+         /*이렇게 작성하면 옆으로 붙는 형식이 됨*/
+         /* float: left; */
+         margin: 0px;
+      }
 
-     .logo {
-        float: left;
-        margin: 0;
-     }
+      a {
+         /*버튼에 밑줄이 지워짐*/
+         text-decoration: none;
+         text-align: center;
+      }
 
-     .navbar {
-        background-color: rgb(227, 253, 253);
-        text-align: right;
-        float: right;
-        margin: 0;
-     }
+      .header {
+         background-color: rgb(227, 253, 253);
+         width: 100%;
+         height: 100px;
+         padding : 15px;
+      }
 
-     .about {
-        background-color: rgb(203, 241, 245);
-        text-align: left;
-        margin: 0;
-     }
+      .main {
+         background-color: rgb(203, 241, 245);
+         width: 100%;
+      }
 
-     .footer1 {
-        width: 33%;
-        height: 300px;
-        background-color: rgb(166, 227, 233);
-        display: inline-flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        text-align: left;
-        margin: 0;
-        padding-top: 15px;
-     }
+      .logo {
+         float: left;
+         margin: 0;
+      }
 
-     .footer2 {
-        width: 33%;
-        height: 300px;
-        background-color: rgb(166, 227, 233);
-        display: inline-flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        text-align: left;
-        margin: 0;
-        padding-top: 15px;
-     }
+      .navbar {
+         background-color: rgb(227, 253, 253);
+         text-align: right;
+         float: right;
+         margin: 0;
+      }
 
-     .footer3 {
-        width: 34%;
-        height: 300px;
-        background-color: rgb(166, 227, 233);
-        display: inline-flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        text-align: left;
-        margin: 0;
-        padding-top: 15px;
+      .about {
+         background-color: rgb(203, 241, 245);
+         text-align: left;
+         margin: 0;
+         padding : 15px;
 
-     }
+      }
 
-     .copyright {
-        background-color: rgb(113, 201, 206);
-        text-align: center;
-     }
+      .footer1 {
+         width: 33%;
+         height: 300px;
+         background-color: rgb(166, 227, 233);
+         display: inline-flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         text-align: left;
+         margin: 0;
+         padding: 15px;
 
-     ul {
-        display: block;
-        list-style-type: disc;
-        margin-block-start: 0;
-        margin-block-end: 0;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        padding-inline-start: 0px;
-     }
+      }
 
-     h1 {
-        display: block;
-        font-size: 0;
-        margin-block-start: 0.67em;
-        margin-block-end: 0.67em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        font-weight: bold;
-     }
+      .footer2 {
+         width: 33%;
+         height: 300px;
+         background-color: rgb(166, 227, 233);
+         display: inline-flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         text-align: left;
+         margin: 0;
+         padding-top: 15px;
 
-     h4 {
-        display: block;
-        margin-block-start: 0;
-        margin-block-end: 0;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        font-weight: bold;
-     }
+      }
+
+      .footer3 {
+         width: 34%;
+         height: 300px;
+         background-color: rgb(166, 227, 233);
+         display: inline-flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         text-align: left;
+         margin: 0;
+         padding-top: 15px;
+
+      }
+
+      .copyright {
+         background-color: rgb(113, 201, 206);
+         text-align: center;
+      }
+
+      ul {
+         display: block;
+         list-style-type: disc;
+         margin-block-start: 0;
+         margin-block-end: 0;
+         margin-inline-start: 0px;
+         margin-inline-end: 0px;
+         padding-inline-start: 0px;
+      }
+
+      h1 {
+         display: block;
+         font-size: 0;
+         margin-block-start: 0.67em;
+         margin-block-end: 0.67em;
+         margin-inline-start: 0px;
+         margin-inline-end: 0px;
+         font-weight: bold;
+      }
+
+      h4 {
+         display: block;
+         margin-block-start: 0;
+         margin-block-end: 0;
+         margin-inline-start: 0px;
+         margin-inline-end: 0px;
+         font-weight: bold;
+      }
   </style>
 </head>
 
 <body>
+      <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
    <!--header section start -->
    <header class="header">
       <div class="logo"><a href="index.html"><img src="images/logo1.png"></a>
       </div>
       <div class="navbar">
          <ul>
-            <button><a href="index.html">홈</a></button>
-            <button><a href="login.html">로그인</a></button>
-            <button><a href="userRegister.html">사용자등록</a></button>
-            <button><a href="workSpaceList.html">업무리스트</a></button>
-            <button><a href="workSpace.html">세부 업무</a></button>
-            <button><a href="organizationChart.html">조직도</a></button>
+               </td>
+            <a class="btn btn-primary" href="index.html" role="button">홈</a>
+            <a class="btn btn-primary" href="userRegister.html" role="button">사용자등록</a>
+            <a class="btn btn-primary" href="workSpaceList.html" role="button">업무리스트</a>
+            <a class="btn btn-primary" href="workSpaceList.html" role="button">세부업무</a>
+            <a class="btn btn-primary" href="organizationChart.html" role="button">조직도</a>
          </ul>
       </div>
    </header>
    <!-- header section end -->
    <!-- main section start -->
-   <main class="main">
-    <div class="login">
-       <h3>사용자 등록</h3><br>
+   <main class="main"><br>
+    <div class="login form-control">
+       <h3>사용자 등록</h3>
        <h6>사 번</h6>
-       <input type="text" placeholder="사번"  id="inputCoNum"><br>
+       <input class="form-control" type="text" id="inputCoNum"><br>
        <h6>아이디</h6>
-       <input type="text" placeholder="아이디" id="inputId"><br>
+       <input class="form-control" type="text" id="inputId"><br>
        <h6>비밀번호</h6>
-       <input type="password" placeholder="비밀번호" id="inputPw"><br>
+       <input class="form-control"type="password" id="inputPw"><br>
        <h6>비밀번호 확인</h6>
-       <input type="password" placeholder="비밀번호" id="inputPwChk"><br>
+       <input class="form-control" type="password" id="inputPwChk"><br>
        <h6>이 름</h6>
-       <input type="text" placeholder="이름" id="inputName"><br>
+       <input class="form-control" type="text" id="inputName"><br>
        <h6>팀 명</h6>
-       <input type="text" placeholder="팀명" id="inputTeam"><br>
+       <input class="form-control" type="text" id="inputTeam"><br>
        <h6>직 위</h6>
-       <input type="text" placeholder="직위" id="inputGrade"><br>
+       <input class="form-control" type="text" id="inputGrade"><br>
        
-       <button id="btnLogIn"><a href="login.html">사용자 등록</a></button>
+       <button id="btnLogIn" button type="button" class="btn btn-primary btn-lg"a href="login.html">사용자 등록</button></div><br>
  </main>
    <!-- main section end -->
    <!-- footer section start -->
@@ -249,9 +259,10 @@
       </div>
    </div><div class="footer3"><form action="complain">
          <div><h4>불편사항 접수</h4><br>
-            <textarea type="text" class="mail_bt" placeholder="불편사항" rows="5" cols="22" name="complain"></textarea><br>
-            <input type="text" class="mail_bt" placeholder="이메일 주소" name="Enter Your Email"><br>
-         <button><a href="#">전송</a></button></form>
+            <textarea class="form-control"type="text" class="mail_bt" placeholder="불편사항" rows="5" cols="22" name="complain"></textarea>
+            <input type="text" class="form-control mail_bt" placeholder="이메일 주소" name="Enter Your Email">
+            <button type="button" class="btn btn-light" >제출</button>
+         </form>
       </div></div>
       </div>
    </footer>

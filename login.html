@@ -13,7 +13,7 @@
   integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
   <style>
-       * {
+      * {
          margin: 0;
          padding: 0;
          box-sizing: border-box;
@@ -25,7 +25,7 @@
       }
 
       .container {
-         width: 900px;
+         width: 1000px;
          margin: 0 auto;
       }
 
@@ -44,7 +44,7 @@
 
       .active {
          display: block;
-         height: 150px;
+         height: 350px;
       }
 
       /*아코디언 부분 종료*/
@@ -55,7 +55,7 @@
          width: 300px;
          border: 1px solid black;
          margin: 0 auto;
-         padding: 50px;
+         padding: 15px;
          display: flex;
          flex-direction: column;
       }
@@ -100,6 +100,7 @@
          background-color: rgb(227, 253, 253);
          width: 100%;
          height: 100px;
+         padding : 15px;
       }
 
       .main {
@@ -123,6 +124,7 @@
          background-color: rgb(203, 241, 245);
          text-align: left;
          margin: 0;
+         padding : 15px;
 
       }
 
@@ -135,7 +137,7 @@
          flex-wrap: wrap;
          text-align: left;
          margin: 0;
-         padding-top: 15px;
+         padding: 15px;
 
       }
 
@@ -202,36 +204,40 @@
 </head>
 
 <body>
+      <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
    <!--header section start -->
    <header class="header">
       <div class="logo"><a href="index.html"><img src="images/logo1.png"></a>
       </div>
       <div class="navbar">
          <ul>
-            <button><a href="index.html">홈</a></button>
-            <button><a href="login.html">로그인</a></button>
-            <button><a href="userRegister.html">사용자등록</a></button>
-            <button><a href="workSpaceList.html">업무리스트</a></button>
-            <button><a href="workSpace.html">세부 업무</a></button>
-            <button><a href="organizationChart.html">조직도</a></button>
+               </td>
+            <a class="btn btn-primary" href="index.html" role="button">홈</a>
+            <a class="btn btn-primary" href="userRegister.html" role="button">사용자등록</a>
+            <a class="btn btn-primary" href="workSpaceList.html" role="button">업무리스트</a>
+            <a class="btn btn-primary" href="workSpaceList.html" role="button">세부업무</a>
+            <a class="btn btn-primary" href="organizationChart.html" role="button">조직도</a>
          </ul>
       </div>
    </header>
    <!-- header section end -->
   <!-- main section start -->
+  
   <main class="main">
-    <div class="login">
-       <h3>사용자 로그인</h3><br><br>
+   <br>  <div class="login form-control">
+       <h3>사용자 로그인</h3><br>
        <h5>아이디</h5>
-       <input type="text" placeholder="아이디" id="inputId"><br>
+       <input class="form-control" type="text" id="inputId"><br>
        <h5>비밀번호</h5>
-       <input type="password" placeholder="비밀번호" id="inputPw">
+       <input class="form-control" type="password" id="inputPw">
        
        <label>아이디 저장<input type="checkbox" id="checkIdSave"></label>
-       
-       <button id="btnLogIn"><a href="workSpaceAddListManager.html">관리자 로그인</a></button>
-       <button id="btnLogIn"><a href="workSpaceAddListEmployee.html">직원 로그인</a></button>
- </main>
+       <a href="workSpaceAddListManager.html" id="btnLogIn" button type="button" class="btn btn-primary btn-lg" >관리자 로그인</a><br>
+       <a href="workSpaceAddListEmployee.html" id="btnLogIn" button type="button" class="btn btn-primary btn-lg" >직원 로그인</a>
+</div>       
+<br>
+      </main>
    <!-- main section end -->
    <!-- footer section start -->
    <footer>
@@ -247,11 +253,13 @@
             <li><a href="workSpaceAddListManager.html">업무입력</a></li>
             <li><a href="organizationChart.html">조직도</a></li>
          </ul>
-      </div></div><div class="footer3"><form action="complain">
+      </div>
+   </div><div class="footer3"><form action="complain">
          <div><h4>불편사항 접수</h4><br>
-            <textarea type="text" class="mail_bt" placeholder="불편사항" rows="5" cols="22" name="complain"></textarea><br>
-            <input type="text" class="mail_bt" placeholder="이메일 주소" name="Enter Your Email"><br>
-         <button><a href="#">전송</a></button></form>
+            <textarea class="form-control"type="text" class="mail_bt" placeholder="불편사항" rows="5" cols="22" name="complain"></textarea>
+            <input type="text" class="form-control mail_bt" placeholder="이메일 주소" name="Enter Your Email">
+            <button type="button" class="btn btn-light" >제출</button>
+         </form>
       </div></div>
       </div>
    </footer>
