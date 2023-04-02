@@ -49,8 +49,6 @@
 
       /*아코디언 부분 종료*/
 
-
-
       .login {
          width: 300px;
          border: 1px solid black;
@@ -113,6 +111,13 @@
          margin: 0;
       }
 
+      .logo::after {
+            /*set로 사용한다고 생각하고 외워 해결방법 3가지 중에 세번째*/
+            content: "";
+            clear:both;/*float의 기능을 해제하는*/
+            display: block;
+        }
+
       .navbar {
          background-color: rgb(227, 253, 253);
          text-align: right;
@@ -138,7 +143,6 @@
          text-align: left;
          margin: 0;
          padding: 15px;
-
       }
 
       .footer2 {
@@ -151,7 +155,6 @@
          text-align: left;
          margin: 0;
          padding-top: 15px;
-
       }
 
       .footer3 {
@@ -164,7 +167,6 @@
          text-align: left;
          margin: 0;
          padding-top: 15px;
-
       }
 
       .copyright {
@@ -213,7 +215,7 @@
       </div>
       <div class="navbar">
          <ul>
-               </td>
+            </td>
             <a class="btn btn-primary" href="index.html" role="button">홈</a>
             <a class="btn btn-primary" href="userRegister.html" role="button">사용자등록</a>
             <a class="btn btn-primary" href="workSpaceList.html" role="button">업무리스트</a>
@@ -224,17 +226,19 @@
    </header>
    <!-- header section end -->
    <!-- about section start -->
-
    <div class="about">
-      <div><img src="images/img-8.png"></div>
-      <div>
-         <h1>회사내 업무 관리 사이트</h1>
-         <p>사용자 등록을 마치지 않은 직원은 사용자 등록 후 이용해주시기 바랍니다.</p>
-         <a href="login.html"class="btn btn-primary">로그인 </a>&nbsp<a href="userRegister.html" class="btn btn-primary">사용자등록 </a>
-         </div>
+      <div style="float : left"><img src="images/img-8.png" style="padding: 15px;"></div>
+      <div ><br><br><br>
+         <div><h2 style = "text-align: left">회사내 업무 관리 사이트</h2></div><br>
+         <div><p style="text-align: left;">사용자 등록을 마치지 않은 직원은 사용자 등록 후 이용해주시기 바랍니다.
+</p></div>
+         <div style="text-align: left;"><a href="login.html"class="btn btn-primary">로그인 </a>&nbsp<a href="userRegister.html" class="btn btn-primary" >사용자등록 </a>
+         <div style="clear : both"></div></div></div >
          <br>
-      </div>
-   </div>
+      </div >
+   </div >
+</div >
+</div >
    <!-- about section end -->
    <!-- footer section start -->
    <footer>
