@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <title>업무 리스트 페이지(가제목 : 회사내 업무관리 사이트)</title>
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+
+      /*아코디언 부분*/
+      h3 {
+         text-align: center;
+      }
+
+      .container {
+         width: 1000px;
+         margin: 0 auto;
+      }
+
+      .item-title {
+         font-weight: bold;
+         color: darkblue;
+         cursor: pointer;
+      }
+
+      .item-content {
+         height: 0px;
+         overflow: hidden;
+         transition-property: all;
+         transition-duration: 1s;
+      }
+
+      .active {
+         display: block;
+         height: 350px;
+      }
+
+      /*아코디언 부분 종료*/
+
+
+
+      .login {
+         width: 300px;
+         border: 1px solid black;
+         margin: 0 auto;
+         padding: 15px;
+         display: flex;
+         flex-direction: column;
+      }
+
+      .login label {
+         margin-top: 20px;
+      }
+
+      .login button {
+         margin-top: 20px;
+      }
+
+      .login input {
+         font-size: 1.25rem;
+         padding-left: 10px;
+      }
+
+      .login input:focus {
+         /* later..google */
+         border: 1px solid red;
+      }
+
+      h2 {
+         text-align: center;
+      }
+
+      li {
+         /*아래와 같이 list-style을 none으로 작성하면 앞에 점을 제거할 수 있음*/
+         list-style: none;
+         /*이렇게 작성하면 옆으로 붙는 형식이 됨*/
+         /* float: left; */
+         margin: 0px;
+      }
+
+      a {
+         /*버튼에 밑줄이 지워짐*/
+         text-decoration: none;
+         text-align: center;
+      }
+
+      .header {
+         background-color: rgb(227, 253, 253);
+         width: 100%;
+         height: 100px;
+         padding : 15px;
+      }
+
+      .main {
+         background-color: rgb(203, 241, 245);
+         width: 100%;
+      }
+
+      .logo {
+         float: left;
+         margin: 0;
+      }
+
+      .navbar {
+         background-color: rgb(227, 253, 253);
+         text-align: right;
+         float: right;
+         margin: 0;
+      }
+
+      .about {
+         background-color: rgb(203, 241, 245);
+         text-align: left;
+         margin: 0;
+         padding : 15px;
+
+      }
+
+      .footer1 {
+         width: 33%;
+         height: 300px;
+         background-color: rgb(166, 227, 233);
+         display: inline-flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         text-align: left;
+         margin: 0;
+         padding: 15px;
+
+      }
+
+      .footer2 {
+         width: 33%;
+         height: 300px;
+         background-color: rgb(166, 227, 233);
+         display: inline-flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         text-align: left;
+         margin: 0;
+         padding-top: 15px;
+
+      }
+
+      .footer3 {
+         width: 34%;
+         height: 300px;
+         background-color: rgb(166, 227, 233);
+         display: inline-flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         text-align: left;
+         margin: 0;
+         padding-top: 15px;
+
+      }
+
+      .copyright {
+         background-color: rgb(113, 201, 206);
+         text-align: center;
+      }
+
+      ul {
+         display: block;
+         list-style-type: disc;
+         margin-block-start: 0;
+         margin-block-end: 0;
+         margin-inline-start: 0px;
+         margin-inline-end: 0px;
+         padding-inline-start: 0px;
+      }
+
+      h1 {
+         display: block;
+         font-size: 0;
+         margin-block-start: 0.67em;
+         margin-block-end: 0.67em;
+         margin-inline-start: 0px;
+         margin-inline-end: 0px;
+         font-weight: bold;
+      }
+
+      h4 {
+         display: block;
+         margin-block-start: 0;
+         margin-block-end: 0;
+         margin-inline-start: 0px;
+         margin-inline-end: 0px;
+         font-weight: bold;
+      }
+   </style>
+</head>
+
+<body>
+      <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+   <!--header section start -->
+   <header class="header">
+      <div class="logo"><a href="index.html"><img src="images/logo1.png"></a>
+      </div>
+      <div class="navbar">
+         <ul>
+               </td>
+            <a class="btn btn-primary" href="index.html" role="button">홈</a>
+            <a class="btn btn-primary" href="userRegister.html" role="button">사용자등록</a>
+            <a class="btn btn-primary" href="workSpaceList.html" role="button">업무리스트</a>
+            <a class="btn btn-primary" href="workSpaceList.html" role="button">세부업무</a>
+            <a class="btn btn-primary" href="organizationChart.html" role="button">조직도</a>
+         </ul>
+      </div>
+   </header>
+   <!-- header section end -->
+   <!-- main section start -->
+   <main class="main">
+      <br>
+      <h3>성과분석 페이지(관리자용)</h3>
+      <div class="container">
+         <button id="allCloseBtn" class="btn btn-primary">전부닫기</button>
+         <!--
+         <button id='addRowBtn' type="button" class="btn btn-primary">업무 추가</button> 
+         -->   
+
+        <script src="index.js"></script>
+         <table class="table" style="text-align: center;">
+            <thead>
+               <tr>
+                  <th scope="col">사 번</th>
+                  <th scope="col">이 름</th>
+                  <th scope="col">입사일</th>
+                  <th scope="col">아이디</th>
+                  <th scope="col">팀 명</th>
+                  <th scope="col">직 위</th>
+                  <th scope="col">성 과</th>
+               </tr>
+            </thead>
+            <tbody id="dynamicTbody" >
+               <tr id="tr1">
+                  <th scope="row">101</th>
+                  <td>
+                     <div class="item-container">
+                        <p class="item-title">홍 웹</p>
+                        <div class="item-content" style="text-align: left;">
+                           <p>1. 웹 개발 총괄</p>
+                           <p>2. DBMS</p>
+                        </div>
+                     </div>
+                  </td>
+                  <td>20. 1. 30(목)</td>
+                  <td>web1</td>
+                  <td>web 개발</td>
+                     <td> <button id="1" type="button" class="btn btn-success deleteBtn">사원</button></td>
+                     <td><button id="3" type="button" class="btn btn-success deleteBtn">탁월</button></td>
+
+               <tr id="tr2">
+                  <th scope="row">102</th>
+                  <td>
+                     <div class="item-container">
+                        <p class="item-title">김 바 일</p>
+                        <div class="item-content" style="text-align: left;">
+                           <p>1. 모바일 개발 총괄</p>
+                           <p>2. android app, ios</p>
+                        </div>
+                     </div>
+                  </td>
+                  <td>20. 6. 31(월)</td>
+                  <td>mobile1</td>
+                  <td>mobile 개발</td>
+                     <td> <button id="2" type="button" class="btn btn-success deleteBtn">사원</button></td>
+                     <td><button id="3" type="button" class="btn btn-warning deleteBtn">우수</button></td>
+                  </tr>
+               <tr id="tr3">
+               <th scope="row">103</th>
+               <td>
+                  <div class="item-container">
+                     <p class="item-title">김서버</p>
+                     <div class="item-content" style="text-align: left;">
+                        <p>1. server 관리</p>
+                        <p>2. database 유지</p>
+                     </div>
+                  </div>
+               </td>
+               <td>21. 1. 2(월)</td>
+               <td>serverdb1</td>
+               <td>서버/DB 개발</td>
+               <td> <button id="3" type="button" class="btn btn-success deleteBtn">사원</button></td>
+               <td><button id="3" type="button" class="btn btn-danger deleteBtn">미흡</button></td>
+            </tr>
+            </tbody>
+            <colgroup>
+               <col width="15%">
+               <col width="15%">
+               <col width="15%">
+               <col width="15%">
+               <col width="15%">
+               <col width="15%">
+            </colgroup>
+         </table>
+      <br>
+      <h3>홍웹 개별 업무성과</h3>
+      <div class="container">
+         <button id="allCloseBtn" class="btn btn-primary">전부닫기</button>
+         <!--
+         <button id='addRowBtn' type="button" class="btn btn-primary">업무 추가</button> 
+         -->   
+
+        <script src="index.js"></script>
+         <table class="table" style="text-align: center;">
+            <thead>
+               <tr>
+                  <th scope="col">구 분</th>
+                  <th scope="col">제 목</th>
+                  <th scope="col">시작일</th>
+                  <th scope="col">종료일</th>
+                  <th scope="col">상 태</th>
+                  <th scope="col">결 과</th>
+               </tr>
+            </thead>
+            <tbody id="dynamicTbody" >
+               <tr id="tr1">
+                  <th scope="row">1</th>
+                  <td>
+                     <div class="item-container">
+                        <p class="item-title">업무관리 페이지 제작</p>
+                        <div class="item-content" style="text-align: left;">
+                           <p>1. 클릭하면 상세 페이지로 이동 버튼 추가</p>
+                           <p>2. 업무담당자로 지정받은 자는 결과 입력 기능 추가</p>
+                           <textarea type="text" class="todoResult" placeholder="결과 입력" rows="5" cols="40" name="todoResult"></textarea>
+                                    <!--fileUpload multipart=form 구현-->
+         <form id="form" enctype="multipart/form-data">
+            <div class="input-group">
+                <label for="files">&nbsp자료 업로드</label>&nbsp &nbsp
+                <input id="file" type="file" multiple />&nbsp<button class="submit-btn" type="submit">Upload</button>
+           </div></form>
+                        </div>
+                     </div>
+                  </td>
+                  <td>23. 3. 30(목)</td>
+                  <td>23. 3. 31(금)</td>
+                  <td><select>
+                        <option value="1">대기</option>
+                        <option value="2">작업중</option>
+                        <option value="3" selected>완료</option>
+                        <option value="4">실패</option>
+                     </select></td>
+                     <td> <button id="1" type="button" class="btn btn-success deleteBtn">탁월</button></td>
+
+               <tr id="tr2">
+                  <th scope="row">2</th>
+                  <td>
+                     <div class="item-container">
+                        <p class="item-title">업무상세페이지 제작</p>
+                        <div class="item-content" style="text-align: left;">
+                           <p>1. 업무담당자 지정받은 자의 결과 입력 기능 추가</p>
+                           <p>2. 결과를 종합하여 연봉협상에 반영토록 저장</p>
+                           <textarea type="text" class="todoResult" placeholder="결과 입력" rows="5" cols="40" name="todoResult"></textarea>
+         <!--fileUpload multipart=form 구현-->
+         <form id="form" enctype="multipart/form-data">
+            <div class="input-group">
+                <label for="files">&nbsp자료 업로드</label>&nbsp &nbsp
+                <input id="file" type="file" multiple />&nbsp<button class="submit-btn" type="submit">Upload</button>
+           </div></form>
+                        </div>
+                     </div>
+                  </td>
+                  <td>23. 3. 31(금)</td>
+                  <td>23. 4. 3(월)</td>
+                  <td><select>
+                     <option value="1">대기</option>
+                     <option value="2">작업중</option>
+                     <option value="3"selected>완료</option>
+                     <option value="4">실패</option>
+                     </select></td>
+                     <td> <button id="2" type="button" class="btn btn-success deleteBtn">탁월</button></td>
+               </tr>
+               <tr id="tr3">
+               <th scope="row">3</th>
+               <td>
+                  <div class="item-container">
+                     <p class="item-title">조직도 페이지 제작</p>
+                     <div class="item-content" style="text-align: left;">
+                        <p>1. 사진과 담당 업무가 기술 될 수 있도록 제작</p>
+                        <p>2. 한페이지 나올 수 있도록 제작</p>
+                        <textarea type="text" class="todoResult" placeholder="결과 입력" rows="5" cols="40" name="todoResult"></textarea>
+         <!--fileUpload multipart=form 구현-->
+         <form id="form" enctype="multipart/form-data">
+            <div class="input-group">
+                <label for="files">&nbsp자료 업로드</label>&nbsp &nbsp
+                <input id="file" type="file" multiple />&nbsp<button class="submit-btn" type="submit">Upload</button>
+           </div></form>
+                     </div>
+                  </div>
+               </td>
+               <td>23. 4. 4(화)</td>
+               <td>23. 4. 5(수)</td>
+               <td><select>
+                  <option value="1">대기</option>
+                  <option value="2" >작업중</option>
+                  <option value="3"selected>완료</option>
+                  <option value="4">실패</option>
+                  </select></td>
+               <td> <button id="3" type="button" class="btn btn-success deleteBtn">탁월</button></td>
+               </tr>
+            </tbody>
+            <colgroup>
+               <col width="8%">
+               <col width="30%">
+               <col width="20%">
+               <col width="20%">
+               <col width="10%">
+               <col width="15%">
+            </colgroup>
+         </table>
+<br><br><br>
+   </main>
+   <!-- main section end -->
+   <!-- footer section start -->
+   <footer>
+      <div class="footer1"><div>
+         <h4>주소</h4><br>
+         <p>충남 천안시 동남구 대흥로 215, 7층</p>
+      </div></div><div class="footer2"><div>
+         <h4>빠른 페이지 이동</h4>
+         <ul>
+            <li><a href="index.html">홈</a></li>
+            <li><a href="workSpaceList.html">업무리스트</a></li>
+            <li><a href="workSpaceAddListEmployee.html">세부 업무리스트</a></li>
+            <li><a href="workSpaceAddListManager.html">업무입력</a></li>
+            <li><a href="organizationChart.html">조직도</a></li>
+         </ul>
+      </div>
+   </div><div class="footer3"><form action="complain">
+         <div><h4>불편사항 접수</h4><br>
+            <textarea class="form-control"type="text" class="mail_bt" placeholder="불편사항" rows="5" cols="22" name="complain"></textarea>
+            <input type="text" class="form-control mail_bt" placeholder="이메일 주소" name="Enter Your Email">
+            <button type="button" class="btn btn-light" >제출</button>
+         </form>
+      </div></div>
+      </div>
+   </footer>
+   <!-- footer section end -->
+   <!-- copyright section start -->
+   <div>
+      <div class="copyright">Copyright 2023 All Right Reserved By <a
+            href="/project_1st_test_todoList_destroy/index.html">CHD corp.</a></div>
+   </div>
+   <!-- copyright section end -->
+   <script>
+      //title   1 2 3
+      //content 1 2 3
+      const itemTitles = document.querySelectorAll('.item-title');
+
+      console.log(itemTitles);
+
+      for (let i = 0; i < itemTitles.length; i++) {
+         itemTitles[i].addEventListener('click', function () {
+
+            console.log('클릭됨');
+            console.log(itemTitles[i]);
+            //1. id=1 > id content1
+            let itemContents = document.querySelectorAll('.item-content');
+            console.log(itemContents);
+
+            //itemContents[i].classList.toggle('active'); //toggle 한방으로 처리
+
+            if (itemContents[i].classList.contains('active')) {
+               itemContents[i].classList.remove('active');
+            } else {
+               //clostAll();
+               itemContents[i].classList.add('active');
+            }
+
+            //0 -> 0 active
+            //1 -> 1 active
+         });
+      }
+
+      function clostAll() {
+         let itemContents = document.querySelectorAll('.item-content');
+         for (let el of itemContents) {
+            el.classList.remove('active');
+         }
+      }
+
+      document.querySelector('#allCloseBtn').addEventListener('click', function () {
+         //content 요소들에 쫓아가서 active 클래스를다 지워버리면.
+         //열린게 닫힌 효과!!!
+         //시작!!!!
+         clostAll();
+      });
+   </script>
+
+   <!--jQuiry start-->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <!--jQuiry end-->
+
+   <!--업무추가 부분-->>
+   <script>
+      $(document).ready(function () {
+
+         //$('#removetest').remove();
+
+         let rowCnt = 4;
+         $('#addRowBtn').click(function () {
+            //버튼을 누르면 실행할 코드
+            $('#dynamicTbody').append('<tr id="tr'+rowCnt+'"><th scope="row">'+rowCnt+'</th><td><div class="item-container"><p class="item-title">조직도 페이지 제작</p><div class="item-content"><p>사진과 담당 업무가 기술 될 수 있도록 제작</p><p>한페이지 나올 수 있도록 제작</p></div></div></td><td>23. 4. 4(화)</td><td>23. 4. 5(수)</td><td><select><option value="1" selected>대기</option><option value="2">작업중</option><option value="3">완료</option><option value="4">실패</option></select></td><td> <button id="'+rowCnt+'" type="button" class="btn btn-success deleteBtn">제출</button></td></tr>');
+            rowCnt++;
+         });
+         //삭제를 하고 싶음
+         $(document).on('click', '.deleteBtn', function () {
+            //tempId를 tmepId로 오탈자
+            let tempId = $(this).attr('id');
+            $('#tr' + tempId).remove();
+         });
+      })
+   </script>
+
+</body>
+
+</html>
