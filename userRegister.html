@@ -36,26 +36,26 @@
    <!-- header section end -->
    <!-- main section start -->
    <main class="main"><br>
-    <div class="login form-control">
-       <h3>사용자 등록</h3>
-       <h6>사 번</h6>
-       <input class="form-control" type="text" id="inputCoNum"><br>
-       <h6>아이디</h6>
-       <input class="form-control" type="text" id="inputId"><br>
-       <h6>비밀번호</h6>
-       <input class="form-control"type="password" id="inputPw"><br>
-       <h6>비밀번호 확인</h6>
-       <input class="form-control" type="password" id="inputPwChk"><br>
-       <h6>이 름</h6>
-       <input class="form-control" type="text" id="inputName"><br>
-       <h6>팀 명</h6>
-       <input class="form-control" type="text" id="inputTeam"><br>
-       <h6>직 위</h6>
-       <input class="form-control" type="text" id="inputGrade"><br>
-       
-       <a href="index.html" id="btnLogIn" button type="button" class="btn btn-primary btn-lg"style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6) ">사용자 등록</a></div><br>
- </main>
-   <!-- main section end -->
+      <div class="login form-control">
+         <h3>사용자 등록</h3>
+         <h6>사 번</h6>
+         <input class="form-control" type="text" id="inputCoNum"><br>
+         <h6>아이디</h6>
+         <input class="form-control" type="text" id="inputId"><br>
+         <h6>비밀번호</h6>
+         <input class="form-control"type="password" id="inputPw"><br>
+         <h6>비밀번호 확인</h6>
+         <input class="form-control" type="password" id="inputPwChk"><br>
+         <h6>이 름</h6>
+         <input class="form-control" type="text" id="inputName"><br>
+         <h6>팀 명</h6>
+         <input class="form-control" type="text" id="inputTeam"><br>
+         <h6>직 위</h6>
+         <input class="form-control" type="text" id="inputGrade"><br>
+         
+         <button type="button" a href="index.html" id="btnLogIn"  class="btn btn-primary btn-lg"style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6) ">사용자 등록</button></div><br>
+   </main>
+     <!-- main section end -->
    <!-- footer section start -->
    <footer>
       <div class="footer1"><div>
@@ -72,7 +72,7 @@
       </div>
    </div><div class="footer3"><form action="complain">
          <div><h4>불편사항 접수</h4><br>
-            <textarea class="form-control"type="text" class="mail_bt" placeholder="불편사항" rows="5" cols="22" name="complain"></textarea>
+            <textarea class="form-control"type="text" class="mail_bt" placeholder="불편사항" rows="3" cols="22" name="complain"></textarea>
             <input type="text" class="form-control mail_bt" placeholder="이메일 주소" name="Enter Your Email">
             <button type="button" class="btn btn-light" >제출</button>
          </form>
@@ -86,7 +86,40 @@
           href="/project_1st_test_todoList_destroy/index.html">CHD corp.</a></div>
  </div>
  <!-- copyright section end -->
+ <script>
+   const btn = document.getElementById('btnLogIn');
+const inputCoNum = document.getElementById('inputCoNum');
+const inputId = document.getElementById('inputId');
+const inputPw = document.getElementById('inputPw');
+const inputPwChk = document.getElementById('inputPwChk');
+const inputName = document.getElementById('inputName');
+const inputTeam = document.getElementById('inputTeam');
+const inputGrade = document.getElementById('inputGrade');
 
+btn.addEventListener('click', function() {
+   alert("사용자등록이 성공적으로 되었습니다.");
+  // 입력된 값을 변수에 저장
+  const coNum = inputCoNum.value;
+  const id = inputId.value;
+  const pw = inputPw.value;
+  const pwChk = inputPwChk.value;
+  const name = inputName.value;
+  const team = inputTeam.value;
+  const grade = inputGrade.value;
+
+  // 로컬 저장소에 데이터 저장
+  localStorage.setItem('coNum', coNum);
+  localStorage.setItem('id', id);
+  localStorage.setItem('pw', pw);
+  localStorage.setItem('name', name);
+  localStorage.setItem('team', team);
+  localStorage.setItem('grade', grade);
+  
+  //index.html로 이동
+  location.href = "index.html";
+//   window.open("index.html");
+});
+</script>
 </body>
 
 </html>

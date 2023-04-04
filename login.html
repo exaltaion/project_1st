@@ -45,9 +45,9 @@
        <h5>비밀번호</h5>
        <input class="form-control" type="password" id="inputPw">
        
-       <label>아이디 저장<input type="checkbox" id="checkIdSave"></label>
-       <a href="workSpaceAddListManager.html" id="btnLogIn" button type="button" class="btn btn-primary btn-lg" style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6)">관리자 로그인</a><br>
-       <a href="workSpaceAddListEmployee.html" id="btnLogIn" button type="button" class="btn btn-primary btn-lg" style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6)">직원 로그인</a>
+       <label>아이디 저장<input type="checkbox" id="checkIdSave"></label><br>
+       <button type="button" a href="workSpaceAddListManager.html" id="btnLogIn"  class="btn btn-primary btn-lg" style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6) " onclick="login()">관리자 로그인</button><br>
+       <button type="button" a href="workSpaceAddListEmployee.html" id="btnLogIn"  class="btn btn-primary btn-lg" style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6) "onclick="tryLogin()">직원 로그인</button>
 </div>       
 <br>
       </main>
@@ -68,7 +68,7 @@
       </div>
    </div><div class="footer3"><form action="complain">
          <div><h4>불편사항 접수</h4><br>
-            <textarea class="form-control"type="text" class="mail_bt" placeholder="불편사항" rows="5" cols="22" name="complain"></textarea>
+            <textarea class="form-control"type="text" class="mail_bt" placeholder="불편사항" rows="3" cols="22" name="complain"></textarea>
             <input type="text" class="form-control mail_bt" placeholder="이메일 주소" name="Enter Your Email">
             <button type="button" class="btn btn-light" >제출</button>
          </form>
@@ -82,35 +82,52 @@
           href="/project_1st_test_todoList_destroy/index.html">CHD corp.</a></div>
  </div>
  <!-- copyright section end -->
-  <script>
-    window.onload = ()=>{
-      const btn = document.getElementById('btnLogIn');
-      const inputId = document.getElementById('inputId');
-      const inputPw = document.getElementById('inputPw');
-      const inputChk = document.getElementById('checkIdSave');
- 
-      let loginId_LocalStorage = localStorage.getItem('loginId');
-      console.log(loginId_LocalStorage);
-      if(loginId_LocalStorage !=''&&loginId_LocalStorage !=null){
-        inputId.value = loginId_LocalStorage;
-        inputChk.checked = true;
+ <script>
+   function login() {
+          const inputId = document.getElementById('inputId').value;
+          const inputPw = document.getElementById('inputPw').value;
+  
+          const storedId = localStorage.getItem('id');
+          const storedPw = localStorage.getItem('pw');
+  
+          if (inputId === storedId && inputPw === storedPw) {
+            alert('로그인 성공');
+            // 로그인에 성공했을 때 처리할 내용
+            //index.html로 이동
+            location.href = "workSpaceAddListManager.html";
+            //window.open("index.html");
+          } else {
+            alert('아이디 또는 비밀번호가 일치하지 않습니다.');
+            // 로그인에 실패했을 때 처리할 내용
+          }
+        }
+  
+      window.onload = ()=>{
+  
+        const btn = document.getElementById('btnLogIn');
+        const inputId = document.getElementById('inputId');
+        const inputPw = document.getElementById('inputPw');
+        const inputChk = document.getElementById('checkIdSave');
+   
+        let loginId_LocalStorage = localStorage.getItem('loginId');
+        console.log(loginId_LocalStorage);
+        if(loginId_LocalStorage !=''&&loginId_LocalStorage !=null){
+          inputId.value = loginId_LocalStorage;
+          inputChk.checked = true;
+        }
+        btn.addEventListener('click', function(){
+       if(inputChk.checked==true){
+        console.log(inputChk.checked);
+        localStorage.setItem('loginId', inputId.value);
+       } else {
+        console.log(inputChk.checked);
+        localStorage.setItem('loginId', '');
+       }
+          inputId.value = '';
+          inputPw.value = '';
+        });
       }
- 
-      btn.addEventListener('click', function(){
- 
-     if(inputChk.checked==true){
-      console.log(inputChk.checked);
-      localStorage.setItem('loginId', inputId.value);
-     } else {
-      console.log(inputChk.checked);
-      localStorage.setItem('loginId', '');
-     }
- 
-        inputId.value = '';
-        inputPw.value = '';
-      });
-    }
-  </script>
+    </script>
 </body>
 
 </html>

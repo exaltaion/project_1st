@@ -121,7 +121,7 @@ a {
 
 .footer1 {
   width: 33%;
-  height: 300px;
+  height: 250px;
   background-color: rgb(66, 1, 6);
   color :rgb(255, 255, 255);
   display: inline-flex;
@@ -133,7 +133,7 @@ a {
 }
 .footer2 {
   width: 33%;
-  height: 300px;
+  height: 250px;
   background-color: rgb(66, 1, 6);
   color :rgb(255, 255, 255);
   display: inline-flex;
@@ -146,7 +146,7 @@ a {
 
 .footer3 {
   width: 34%;
-  height: 300px;
+  height: 250px;
   background-color: rgb(66, 1, 6);
   color :rgb(255, 255, 255);
   display: inline-flex;
