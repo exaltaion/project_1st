@@ -10,8 +10,18 @@
    <title>업무 리스트(직원) 페이지(가제목 : 회사내 업무관리 사이트)</title>
 
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-      <link rel = "stylesheet" href = "css/style.css">
+   integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+   
+   <link rel = "stylesheet" href = "css/style.css">
+
+   <!--header footer 분리-->
+   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+   <script type="text/javascript">   
+   $(document).ready( function() {
+   $("#headers").load("header.html");
+   $("#footers").load("footer.html");
+                                    });
+      </script>
 
       <style>
       </style>
@@ -22,20 +32,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
    <!--header section start -->
-   <header class="header">
-      <div class="logo"><a href="index.html"><img src="images/logo1.png"></a>
-      </div>
-      <div class="navbar">
-         <ul>
-            <a class="btn btn-primary" href="index.html" role="button" type style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6)">홈</a>
-            <a class="btn btn-primary" href="userRegister.html" role="button" style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6)">사용자등록</a>
-            <a class="btn btn-primary" href="workSpaceAddListManager.html" role="button" style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6) ">관리자 업무리스트</a>
-            <a class="btn btn-primary" href="workSpaceAddListEmployee.html" role="button" style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6) ">직원 업무리스트</a>
-            <a class="btn btn-primary" href="performanceAnaysis.html" role="button" style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6) ">업무 성과분석</a>
-         </ul>
-      </div>
-   </header>
+   <div id="headers"></div>
    <!-- header section end -->
+
    <!-- main section start -->
    <main class="main">
       <br>
@@ -123,7 +122,7 @@
                         <p>1. 사진과 담당 업무가 기술 될 수 있도록 제작</p>
                         <p>2. 한페이지 나올 수 있도록 제작</p>
                         <textarea type="text" class="todoResult" placeholder="결과 입력" rows="5" cols="40" name="todoResult"></textarea>
-<!--fileUpload multipart=form 구현-->
+         <!--fileUpload multipart=form 구현-->
          <form id="form" enctype="multipart/form-data">
             <div class="input-group">
                 <label for="files">&nbsp자료 업로드</label>&nbsp &nbsp
@@ -155,36 +154,10 @@
  <br> <br> <br>
    </main>
    <!-- main section end -->
+
    <!-- footer section start -->
-   <footer>
-      <div class="footer1"><div>
-         <h4>주소</h4><br>
-         <p>충남 천안시 동남구 대흥로 215, 7층</p>
-      </div></div><div class="footer2"><div>
-         <h4>빠른 페이지 이동</h4>
-         <ul  >
-            <li><a href="index.html" style="color :rgb(255, 255, 255)">홈</a></li>
-            <li><a href="workSpaceAddListManager.html" style="color :rgb(255, 255, 255)">관리자 업무리스트</a></li>
-            <li><a href="workSpaceAddListEmployee.html"style="color :rgb(255, 255, 255)">직원 업무리스트</a></li>
-            <li><a href="performanceAnaysis.html" style="color :rgb(255, 255, 255)">업무 성과분석</a></li>         
-         </ul>
-      </div>
-   </div><div class="footer3"><form action="complain">
-         <div><h4>불편사항 접수</h4><br>
-            <textarea class="form-control"type="text" class="mail_bt" placeholder="불편사항" rows="3" cols="22" name="complain"></textarea>
-            <input type="text" class="form-control mail_bt" placeholder="이메일 주소" name="Enter Your Email">
-            <button type="button" class="btn btn-light" >제출</button>
-         </form>
-      </div></div>
-      </div>
-   </footer>
-   <!-- footer section end -->
-   <!-- copyright section start -->
-   <div>
-      <div class="copyright">Copyright 2023 All Right Reserved By <a
-            href="/project_1st_test_todoList_destroy/index.html">CHD corp.</a></div>
-   </div>
-   <!-- copyright section end -->
+   <div id="footers"></div>
+   <!-- footer section end -->   
    <script>
       //title   1 2 3
       //content 1 2 3
