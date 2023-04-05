@@ -40,6 +40,8 @@
          <button id="allCloseBtn" class="btn btn-primary"style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6) ">전부닫기</button>
          <button id='addRowBtn' type="button" class="btn btn-primary"style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6) ">업무 추가</button>
          <a href="performanceAnaysis.html"  type="button" class="btn btn-primary"style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6) ">업무 성과</a>
+         <a href="#none" onclick="openPopup()"  type="button" class="btn btn-primary"style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6) ">업무 입력</a>
+
          <table class="table" style="text-align: center;">
             <thead>
                <tr>
@@ -68,11 +70,11 @@
                   <td><input type="date" value="2023-03-31">
                   </td>
                   <td><select>
-                        <option value="1" selected>김길동</option>
-                        <option value="2">이길동</option>
-                        <option value="3">박길동</option>
-                        <option value="4">최길동</option>
-                        <option value="5">서길동</option>
+                        <option value="1" selected>홍웹</option>
+                        <option value="2">김모바일</option>
+                        <option value="3" >이서버</option>
+                        <option value="4">박모바일</option>
+                        <option value="5">최서버</option>
                      </select></td>
                      <td> <button id="1" type="button" class="btn btn-danger deleteBtn">삭제</button></td>
                <tr id="tr2">
@@ -91,11 +93,11 @@
                   <td><input type="date" value="2023-04-01">
                   </td>
                   <td><select>
-                        <option value="1">김길동</option>
-                        <option value="2" selected>이길동</option>
-                        <option value="3">박길동</option>
-                        <option value="4">최길동</option>
-                        <option value="5">서길동</option>
+                        <option value="1">홍웹</option>
+                        <option value="2"selected>김모바일</option>
+                        <option value="3">이서버</option>
+                        <option value="4">박모바일</option>
+                        <option value="5">최서버</option>
                      </select></td>
                      <td> <button id="2" type="button" class="btn btn-danger deleteBtn">삭제</button></td>
                </tr>
@@ -113,11 +115,11 @@
                <td><input type="date" value="2023-04-01"></td>
                <td><input type="date" value="2023-04-02"></td>
                <td><select>
-                     <option value="1">김길동</option>
-                     <option value="2">이길동</option>
-                     <option value="3" selected>박길동</option>
-                     <option value="4">최길동</option>
-                     <option value="5">서길동</option>
+                     <option value="1">홍웹</option>
+                     <option value="2">김모바일</option>
+                     <option value="3" selected>이서버</option>
+                     <option value="4">박모바일</option>
+                     <option value="5">최서버</option>
                   </select></td>
                <td> <button id="3" type="button" class="btn btn-danger deleteBtn">삭제</button></td>
                </tr>
@@ -132,7 +134,6 @@
             </colgroup>
          </table>
          <br>         <br>         <br>
-         
    </main>
    <!-- main section end -->
 
@@ -208,7 +209,14 @@
             $('#tr' + tempId).remove();
          });
       })
+
+      function openPopup(){
+        window.open("popSummer.html", "new", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=700, height=700, left=0, top=0"       
+                   );
+                          }
    </script>
+
+   
 
 </body>
 
