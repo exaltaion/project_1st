@@ -36,7 +36,6 @@
    <!-- header section end -->
 
    <!-- main section start -->
-  
   <main class="main">
    <br>  <div class="login form-control">
        <h3>사용자 로그인</h3><br>
@@ -44,40 +43,39 @@
        <input class="form-control" type="text" id="inputId"><br>
        <h5>비밀번호</h5>
        <input class="form-control" type="password" id="inputPw">
-       
        <label>아이디 저장<input type="checkbox" id="checkIdSave"></label><br>
-       <button type="button" a href="workSpaceAddListManager.html" id="btnLogIn"  class="btn btn-primary btn-lg" style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6) " onclick="login()">관리자 로그인</button><br>
-       <button type="button" a href="workSpaceAddListEmployee.html" id="btnLogIn"  class="btn btn-primary btn-lg" style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6) "onclick="tryLogin()">직원 로그인</button>
-</div>       
-<br>
-      </main>
+       <button type="button" id="btnLogIn"  class="btn btn-primary btn-lg" style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6) " onclick="login()">로그인</button><br>
+
+      </div>       
+   <br>
+  </main>
    <!-- main section end -->
-   
+
    <!-- footer section start -->
    <div id="footers"></div>
-   <!-- footer section end -->   
+   <!-- footer section end -->
+
  <script>
    function login() {
           const inputId = document.getElementById('inputId').value;
           const inputPw = document.getElementById('inputPw').value;
-  
           const storedId = localStorage.getItem('id');
           const storedPw = localStorage.getItem('pw');
-  
+          
           if (inputId === storedId && inputPw === storedPw) {
             alert('로그인 성공');
             // 로그인에 성공했을 때 처리할 내용
-            //index.html로 이동
+            //관리자 업무리스트 페이지로 이동
             location.href = "workSpaceAddListManager.html";
-            //window.open("index.html");
+            //window.open("index.html"); //동일한 기능
           } else {
             alert('아이디 또는 비밀번호가 일치하지 않습니다.');
             // 로그인에 실패했을 때 처리할 내용
           }
         }
   
+      //아이디 저장 기능
       window.onload = ()=>{
-  
         const btn = document.getElementById('btnLogIn');
         const inputId = document.getElementById('inputId');
         const inputPw = document.getElementById('inputPw');

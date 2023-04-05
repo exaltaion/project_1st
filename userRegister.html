@@ -49,7 +49,6 @@
          <input class="form-control" type="text" id="inputTeam"><br>
          <h6>직 위</h6>
          <input class="form-control" type="text" id="inputGrade"><br>
-         
          <button type="button" a href="index.html" id="btnLogIn"  class="btn btn-primary btn-lg"style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6) ">사용자 등록</button></div><br>
    </main>
      <!-- main section end -->
@@ -59,38 +58,42 @@
    <!-- footer section end -->   
  <script>
    const btn = document.getElementById('btnLogIn');
-const inputCoNum = document.getElementById('inputCoNum');
-const inputId = document.getElementById('inputId');
-const inputPw = document.getElementById('inputPw');
-const inputPwChk = document.getElementById('inputPwChk');
-const inputName = document.getElementById('inputName');
-const inputTeam = document.getElementById('inputTeam');
-const inputGrade = document.getElementById('inputGrade');
+   const inputCoNum = document.getElementById('inputCoNum');
+   const inputId = document.getElementById('inputId');
+   const inputPw = document.getElementById('inputPw');
+   const inputPwChk = document.getElementById('inputPwChk');
+   const inputName = document.getElementById('inputName');
+   const inputTeam = document.getElementById('inputTeam');
+   const inputGrade = document.getElementById('inputGrade');
 
 btn.addEventListener('click', function() {
-   alert("사용자등록이 성공적으로 되었습니다.");
-  // 입력된 값을 변수에 저장
-  const coNum = inputCoNum.value;
-  const id = inputId.value;
-  const pw = inputPw.value;
-  const pwChk = inputPwChk.value;
-  const name = inputName.value;
-  const team = inputTeam.value;
-  const grade = inputGrade.value;
+   // 입력된 값을 변수에 저장
+   const coNum = inputCoNum.value;
+   const id = inputId.value;
+   const pw = inputPw.value;
+   const pwChk = inputPwChk.value;
+   const name = inputName.value;
+   const team = inputTeam.value;
+   const grade = inputGrade.value;
 
   // 로컬 저장소에 데이터 저장
-  localStorage.setItem('coNum', coNum);
-  localStorage.setItem('id', id);
-  localStorage.setItem('pw', pw);
-  localStorage.setItem('name', name);
-  localStorage.setItem('team', team);
-  localStorage.setItem('grade', grade);
-  
-  //index.html로 이동
-  location.href = "index.html";
-//   window.open("index.html");
+   localStorage.setItem('coNum', coNum);
+   localStorage.setItem('id', id);
+   localStorage.setItem('pw', pw);
+   localStorage.setItem('name', name);
+   localStorage.setItem('team', team);
+   localStorage.setItem('grade', grade);
+
+   if (!(pw === pwChk)) {//비밀번호 일치여부 확인
+            alert('비밀번호 일치합니다.');
+          } else if(coNum==="07-10771") {// 사번번호 일치여부 확인
+            alert('유효한 사번 번호입니다. 사용자등록을 환영합니다. 로그인 페이지로 이동합니다.');
+            location.href = "login.html";
+            //window.open("login.html"); //동일한 기능
+          } else{
+            alert('사번 번호를 정확히 입력하시기 바랍니다.')
+          }  
 });
 </script>
 </body>
-
 </html>
