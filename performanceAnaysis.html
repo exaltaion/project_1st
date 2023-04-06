@@ -7,7 +7,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-   <title>성과분석 페이지(가제목 : 회사내 업무관리 사이트)</title>
+   <title>업무 리스트 페이지(가제목 : 회사내 업무관리 사이트)</title>
 
    <!-- CSS only -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -149,13 +149,6 @@
                         <div class="item-content" style="text-align: left;">
                            <p>1. 클릭하면 상세 페이지로 이동 버튼 추가</p>
                            <p>2. 업무담당자로 지정받은 자는 결과 입력 기능 추가</p>
-                           <textarea type="text" class="todoResult" placeholder="결과 입력" rows="5" cols="40" name="todoResult"></textarea>
-                                    <!--fileUpload multipart=form 구현-->
-         <form id="form" enctype="multipart/form-data">
-            <div class="input-group">
-                <label for="files">&nbsp자료 업로드</label>&nbsp &nbsp
-                <input id="file" type="file" multiple />&nbsp<button class="submit-btn" type="submit">Upload</button>
-           </div></form>
                         </div>
                      </div>
                   </td>
@@ -177,13 +170,6 @@
                         <div class="item-content" style="text-align: left;">
                            <p>1. 업무담당자 지정받은 자의 결과 입력 기능 추가</p>
                            <p>2. 결과를 종합하여 연봉협상에 반영토록 저장</p>
-                           <textarea type="text" class="todoResult" placeholder="결과 입력" rows="5" cols="40" name="todoResult"></textarea>
-         <!--fileUpload multipart=form 구현-->
-         <form id="form" enctype="multipart/form-data">
-            <div class="input-group">
-                <label for="files">&nbsp자료 업로드</label>&nbsp &nbsp
-                <input id="file" type="file" multiple />&nbsp<button class="submit-btn" type="submit">Upload</button>
-           </div></form>
                         </div>
                      </div>
                   </td>
@@ -205,13 +191,6 @@
                      <div class="item-content" style="text-align: left;">
                         <p>1. 사진과 담당 업무가 기술 될 수 있도록 제작</p>
                         <p>2. 한페이지 나올 수 있도록 제작</p>
-                        <textarea type="text" class="todoResult" placeholder="결과 입력" rows="5" cols="40" name="todoResult"></textarea>
-         <!--fileUpload multipart=form 구현-->
-         <form id="form" enctype="multipart/form-data">
-            <div class="input-group">
-                <label for="files">&nbsp자료 업로드</label>&nbsp &nbsp
-                <input id="file" type="file" multiple />&nbsp<button class="submit-btn" type="submit">Upload</button>
-           </div></form>
                      </div>
                   </div>
                </td>
@@ -262,11 +241,11 @@
 
             //itemContents[i].classList.toggle('active'); //toggle 한방으로 처리
 
-            if (itemContents[i].classList.contains('active2')) {
-               itemContents[i].classList.remove('active2');
+            if (itemContents[i].classList.contains('active1')) {
+               itemContents[i].classList.remove('active1');
             } else {
                //clostAll();
-               itemContents[i].classList.add('active2');
+               itemContents[i].classList.add('active1');
             }
 
             //0 -> 0 active
@@ -277,7 +256,7 @@
       function clostAll() {
          let itemContents = document.querySelectorAll('.item-content');
          for (let el of itemContents) {
-            el.classList.remove('active2');
+            el.classList.remove('active1');
          }
       }
 
@@ -296,11 +275,9 @@
    <!--jQuiry end-->
 
    <!--업무추가 부분-->>
-   <script>
+   <!-- <script>
       $(document).ready(function () {
-
          //$('#removetest').remove();
-
          let rowCnt = 4;
          $('#addRowBtn').click(function () {
             //버튼을 누르면 실행할 코드
@@ -314,7 +291,7 @@
             $('#tr' + tempId).remove();
          });
       })
-   </script>
+   </script> -->
 
 </body>
 
