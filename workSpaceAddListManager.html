@@ -25,6 +25,19 @@
                                  });
    </script>
 
+   <!--팝업창 띄우기-->
+   <script type="text/javascript">
+      var openWin;
+      function openChild()
+      {
+          // window.name = "부모창 이름"; 
+          window.name = "parentForm";
+          // window.open("open할 window", "자식창 이름", "팝업창 옵션");
+          openWin = window.open("Child.html",
+                  "childForm", "width=600, height=600, resizable = no, scrollbars = no");    
+      }
+ </script>
+
 <body>
       <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
@@ -35,8 +48,40 @@
 
    <!-- main section start -->
    <main class="main">
+      <!--부모자식 팝업 test-->
+      <div>
+         <br>
+         <b><font size="5" color="gray">업무리스트 받아오는 창</font></b>
+         <br><br>
+         <input type="button" value="업무입력 신규" onclick="openChild()" class="btn btn-primary"style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6) "><br>
+         <!-- 전달할 값 : <input type="text" id="pInput"> -->
+      </div>
       <div>
       <br>
+      <div>
+         <table class="table" style="text-align: center;">
+            <thead>
+               <tr>
+                  <th>업무코드</th>
+                  <th>시작일</th>
+                  <th>우선순위</th>
+                  <th>업무난이도</th>
+                  <th>업무담당자</th>
+                  <th>제 목</th>
+                  <th>내 용</th>
+               </tr>
+               <tr >
+                  <th><input type="text" id="pInput" style="text-align: center;"></th>
+                  <th><input type="text" id="pstartDay" style="text-align: center;"></th>
+                  <th><input type="text" id="ppriority" style="text-align: center;"></th>
+                  <th><input type="text" id="plv" style="text-align: center;"></th>
+                  <th><input type="text" id="pexclusiveCharge"></th>
+                  <th><input type="text" id="ptitle" style="text-align: center;"></th>
+                  <th><input type="text" id="psummernoteContent" style="text-align: center;"></th>
+               </tr>
+            </thead>
+         </table>
+      </div>
       <h3>업무리스트 페이지(관리자)</h3>
       <div class="container">
          <button id="allCloseBtn" class="btn btn-primary"style="background-color : rgb(66, 1, 6); border-color : rgb(66, 1, 6) ">전부닫기</button>
@@ -47,12 +92,12 @@
          <table class="table" style="text-align: center;">
             <thead>
                <tr>
-                  <th scope="col">구 분</th>
+                  <th scope="col">업무코드</th>
                   <th scope="col">제 목</th>
                   <th scope="col">시작일</th>
                   <th scope="col">종료일</th>
-                  <th scope="col">담당자</th>
-                  <th scope="col">종 료</th>
+                  <th scope="col">업무담당자</th>
+                  <th scope="col">업무삭제</th>
                </tr>
             </thead>
             <tbody id="dynamicTbody">
@@ -127,12 +172,12 @@
                </tr>
             </tbody>
             <colgroup>
-               <col width="8%">
+               <col width="10%">
                <col width="30%">
                <col width="20%">
                <col width="20%">
                <col width="10%">
-               <col width="15%">
+               <col width="10%">
             </colgroup>
          </table>
          <br>         <br>         <br>

@@ -92,7 +92,7 @@ btn.addEventListener('click', function() {
    localStorage.setItem('grade', grade);
 
    if (!(pw === pwChk)) {//비밀번호 일치여부 확인
-            alert('비밀번호 일치합니다.');
+            alert('비밀번호 불일치합니다.');
           } else if(coNum==="07-10771") {// 사번번호 일치여부 확인
             alert('유효한 사번 번호입니다. 사용자등록을 환영합니다.\n로그인 페이지로 이동합니다.');
             location.href = "login.html";
